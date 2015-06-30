@@ -3,35 +3,29 @@ C
 
 Offenses:
 
-lib/combiner.rb:4:81: C: Line is too long. [96/80]
-# - block combining two elements having the same key or a single element, if there is no partner
-                                                                                ^^^^^^^^^^^^^^^^
-lib/combiner.rb:16:3: C: Assignment Branch Condition size for combine is too high. [36.08/15]
+lib/combiner.rb:17:3: C: Assignment Branch Condition size for combine is too high. [36.08/15]
   def combine(*enumerators)
   ^^^
-lib/combiner.rb:16:3: C: Cyclomatic complexity for combine is too high. [12/6]
+lib/combiner.rb:17:3: C: Cyclomatic complexity for combine is too high. [12/6]
   def combine(*enumerators)
   ^^^
-lib/combiner.rb:16:3: C: Method has too many lines. [37/10]
+lib/combiner.rb:17:3: C: Method has too many lines. [38/10]
   def combine(*enumerators)
   ^^^
-lib/combiner.rb:16:3: C: Perceived complexity for combine is too high. [13/7]
+lib/combiner.rb:17:3: C: Perceived complexity for combine is too high. [13/7]
   def combine(*enumerators)
   ^^^
-lib/combiner.rb:19:14: C: Pass [33m&:nil?[0m as an argument to [33mall?[0m instead of a block.
+lib/combiner.rb:20:14: C: Pass [33m&:nil?[0m as an argument to [33mall?[0m instead of a block.
       done = enumerators.all? { |enumerator| enumerator.nil? }
              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-lib/combiner.rb:20:7: C: Use [33mnext[0m to skip iteration.
+lib/combiner.rb:21:7: C: Use [33mnext[0m to skip iteration.
       until done
       ^^^^^
-lib/combiner.rb:21:21: C: Use [33mnext[0m to skip iteration.
+lib/combiner.rb:22:21: C: Use [33mnext[0m to skip iteration.
         last_values.each_with_index do |value, index|
                     ^^^^^^^^^^^^^^^
-lib/combiner.rb:31:16: C: Pass [33m&:nil?[0m as an argument to [33mall?[0m instead of a block.
-        done = enumerators.all? { |enumerator| enumerator.nil? } && last_values.compact.empty?
+lib/combiner.rb:32:16: C: Pass [33m&:nil?[0m as an argument to [33mall?[0m instead of a block.
+        done = enumerators.all? { |enumerator| enumerator.nil? } &&
                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-lib/combiner.rb:31:81: C: Line is too long. [94/80]
-        done = enumerators.all? { |enumerator| enumerator.nil? } && last_values.compact.empty?
-                                                                                ^^^^^^^^^^^^^^
 
-1 file inspected, 10 offenses detected
+1 file inspected, 8 offenses detected

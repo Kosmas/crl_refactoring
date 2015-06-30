@@ -1,7 +1,8 @@
 # input:
 # - two enumerators returning elements sorted by their key
 # - block calculating the key for each element
-# - block combining two elements having the same key or a single element, if there is no partner
+# - block combining two elements having the same key or a single element,
+#   if there is no partner
 # output:
 # - enumerator for the combined elements
 class Combiner
@@ -28,7 +29,8 @@ class Combiner
           end
         end
 
-        done = enumerators.all? { |enumerator| enumerator.nil? } && last_values.compact.empty?
+        done = enumerators.all? { |enumerator| enumerator.nil? } &&
+               last_values.compact.empty?
         unless done
           min_key = last_values.map { |e| key(e) }.min do |a, b|
             if a.nil? && b.nil?
