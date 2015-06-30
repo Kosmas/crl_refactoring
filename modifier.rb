@@ -43,7 +43,7 @@ class Modifier
                 'KEYWORD - Clicks']
   FLOAT_VALUES = ['Avg CPC', 'CTR', 'Est EPC', 'newBid', 'Costs', 'Avg Pos']
 
-  LINES_PER_FILE = 120000
+  LINES_PER_FILE = 120_000
 
   def initialize(saleamount_factor, cancellation_factor)
     @saleamount_factor = saleamount_factor

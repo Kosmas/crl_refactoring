@@ -18,9 +18,6 @@ class Modifier
 modifier.rb:33:1: C: Missing top-level class documentation comment.
 class Modifier
 ^^^^^
-modifier.rb:46:20: C: Separate every 3 digits in the integer portion of a number with underscores(_).
-  LINES_PER_FILE = 120000
-                   ^^^^^^
 modifier.rb:53:3: C: Assignment Branch Condition size for modify is too high. [27.57/15]
   def modify(output, input)
   ^^^
@@ -70,4 +67,4 @@ modifier.rb:188:5: C: Redundant [33mreturn[0m detected.
     return output
     ^^^^^^
 
-1 file inspected, 22 offenses detected
+1 file inspected, 21 offenses detected
