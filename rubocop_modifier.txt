@@ -18,45 +18,15 @@ modifier.rb:10:38: W: Ambiguous regexp literal. Parenthesize the method argument
 modifier.rb:21:1: C: Missing top-level class documentation comment.
 class String
 ^^^^^
-modifier.rb:22:1: C: Use 2 (not 1) spaces for indentation.
-	def from_german_to_f
-^
-modifier.rb:22:1: C: Tab detected.
-	def from_german_to_f
-^
-modifier.rb:23:1: C: Tab detected.
-		self.gsub(',', '.').to_f
-^^
-modifier.rb:23:2: C: Use 2 (not 1) spaces for indentation.
-		self.gsub(',', '.').to_f
- ^
-modifier.rb:23:3: C: Redundant [33mself[0m detected.
-		self.gsub(',', '.').to_f
-  ^^^^^^^^^^^^^^^^^^^
-modifier.rb:24:1: C: Tab detected.
-	end
-^
+modifier.rb:23:5: C: Redundant [33mself[0m detected.
+    self.gsub(',', '.').to_f
+    ^^^^^^^^^^^^^^^^^^^
 modifier.rb:27:1: C: Missing top-level class documentation comment.
 class Float
 ^^^^^
-modifier.rb:28:1: C: Use 2 (not 1) spaces for indentation.
-	def to_german_s
-^
-modifier.rb:28:1: C: Tab detected.
-	def to_german_s
-^
-modifier.rb:29:1: C: Tab detected.
-		self.to_s.gsub('.', ',')
-^^
-modifier.rb:29:2: C: Use 2 (not 1) spaces for indentation.
-		self.to_s.gsub('.', ',')
- ^
-modifier.rb:29:3: C: Redundant [33mself[0m detected.
-		self.to_s.gsub('.', ',')
-  ^^^^^^^^^
-modifier.rb:30:1: C: Tab detected.
-	end
-^
+modifier.rb:29:5: C: Redundant [33mself[0m detected.
+    self.to_s.gsub('.', ',')
+    ^^^^^^^^^
 modifier.rb:33:1: C: Class has too many lines. [129/100]
 class Modifier
 ^^^^^
@@ -64,147 +34,30 @@ modifier.rb:33:1: C: Missing top-level class documentation comment.
 class Modifier
 ^^^^^
 modifier.rb:34:1: C: Extra empty line detected at class body beginning.
-modifier.rb:35:1: C: Use 2 (not 1) spaces for indentation.
-	KEYWORD_UNIQUE_ID = 'Keyword Unique ID'
-^
-modifier.rb:35:1: C: Tab detected.
-	KEYWORD_UNIQUE_ID = 'Keyword Unique ID'
-^
-modifier.rb:36:1: C: Tab detected.
-	LAST_VALUE_WINS = ['Account ID', 'Account Name', 'Campaign', 'Ad Group', 'Keyword', 'Keyword Type', 'Subid', 'Paused', 'Max CPC', 'Keyword Unique ID', 'ACCOUNT', 'CAMPAIGN', 'BRAND', 'BRAND+CATEGORY', 'ADGROUP', 'KEYWORD']
-^
-modifier.rb:36:81: C: Line is too long. [223/80]
-	LAST_VALUE_WINS = ['Account ID', 'Account Name', 'Campaign', 'Ad Group', 'Keyword', 'Keyword Type', 'Subid', 'Paused', 'Max CPC', 'Keyword Unique ID', 'ACCOUNT', 'CAMPAIGN', 'BRAND', 'BRAND+CATEGORY', 'ADGROUP', 'KEYWORD']
-                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-modifier.rb:37:1: C: Tab detected.
-	LAST_REAL_VALUE_WINS = ['Last Avg CPC', 'Last Avg Pos']
-^
-modifier.rb:38:1: C: Tab detected.
-	INT_VALUES = ['Clicks', 'Impressions', 'ACCOUNT - Clicks', 'CAMPAIGN - Clicks', 'BRAND - Clicks', 'BRAND+CATEGORY - Clicks', 'ADGROUP - Clicks', 'KEYWORD - Clicks']
-^
-modifier.rb:38:81: C: Line is too long. [165/80]
-	INT_VALUES = ['Clicks', 'Impressions', 'ACCOUNT - Clicks', 'CAMPAIGN - Clicks', 'BRAND - Clicks', 'BRAND+CATEGORY - Clicks', 'ADGROUP - Clicks', 'KEYWORD - Clicks']
-                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-modifier.rb:39:1: C: Tab detected.
-	FLOAT_VALUES = ['Avg CPC', 'CTR', 'Est EPC', 'newBid', 'Costs', 'Avg Pos']
-^
-modifier.rb:41:3: C: Inconsistent indentation detected.
-  LINES_PER_FILE = 120000
-  ^^^^^^^^^^^^^^^^^^^^^^^
+modifier.rb:36:81: C: Line is too long. [224/80]
+  LAST_VALUE_WINS = ['Account ID', 'Account Name', 'Campaign', 'Ad Group', 'Keyword', 'Keyword Type', 'Subid', 'Paused', 'Max CPC', 'Keyword Unique ID', 'ACCOUNT', 'CAMPAIGN', 'BRAND', 'BRAND+CATEGORY', 'ADGROUP', 'KEYWORD']
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+modifier.rb:38:81: C: Line is too long. [166/80]
+  INT_VALUES = ['Clicks', 'Impressions', 'ACCOUNT - Clicks', 'CAMPAIGN - Clicks', 'BRAND - Clicks', 'BRAND+CATEGORY - Clicks', 'ADGROUP - Clicks', 'KEYWORD - Clicks']
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 modifier.rb:41:20: C: Separate every 3 digits in the integer portion of a number with underscores(_).
   LINES_PER_FILE = 120000
                    ^^^^^^
-modifier.rb:43:1: C: Tab detected.
-	def initialize(saleamount_factor, cancellation_factor)
-^
-modifier.rb:44:1: C: Tab detected.
-		@saleamount_factor = saleamount_factor
-^^
-modifier.rb:44:2: C: Use 2 (not 1) spaces for indentation.
-		@saleamount_factor = saleamount_factor
- ^
-modifier.rb:45:1: C: Tab detected.
-		@cancellation_factor = cancellation_factor
-^^
-modifier.rb:46:1: C: Tab detected.
-	end
-^
-modifier.rb:48:1: C: Tab detected.
-	def modify(output, input)
-^
-modifier.rb:48:2: C: Assignment Branch Condition size for modify is too high. [28.91/15]
-	def modify(output, input)
- ^^^
-modifier.rb:48:2: C: Cyclomatic complexity for modify is too high. [7/6]
-	def modify(output, input)
- ^^^
-modifier.rb:48:2: C: Method has too many lines. [41/10]
-	def modify(output, input)
- ^^^
-modifier.rb:49:1: C: Tab detected.
-		input = sort(input)
-^^
-modifier.rb:49:2: C: Use 2 (not 1) spaces for indentation.
-		input = sort(input)
- ^
-modifier.rb:51:1: C: Tab detected.
-		input_enumerator = lazy_read(input)
-^^
-modifier.rb:53:1: C: Tab detected.
-		combiner = Combiner.new do |value|
-^^
-modifier.rb:54:1: C: Tab detected.
-			value[KEYWORD_UNIQUE_ID]
-^^^
-modifier.rb:54:3: C: Use 2 (not 1) spaces for indentation.
-			value[KEYWORD_UNIQUE_ID]
-  ^
-modifier.rb:55:1: C: Tab detected.
-		end.combine(input_enumerator)
-^^
-modifier.rb:57:1: C: Tab detected.
-		merger = Enumerator.new do |yielder|
-^^
-modifier.rb:58:1: C: Tab detected.
-			while true
-^^^
-modifier.rb:58:3: C: Use 2 (not 1) spaces for indentation.
-			while true
-  ^
-modifier.rb:58:4: C: Use [33mKernel#loop[0m for infinite loops.
-			while true
-   ^^^^^
-modifier.rb:58:10: W: Literal [33mtrue[0m appeared in a condition.
-			while true
-         ^^^^
-modifier.rb:59:1: C: Tab detected.
-				begin
-^^^^
-modifier.rb:59:4: C: Use 2 (not 1) spaces for indentation.
-				begin
-   ^
-modifier.rb:60:1: C: Tab detected.
-					list_of_rows = combiner.next
-^^^^^
-modifier.rb:60:5: C: Use 2 (not 1) spaces for indentation.
-					list_of_rows = combiner.next
-    ^
-modifier.rb:61:1: C: Tab detected.
-					merged = combine_hashes(list_of_rows)
-^^^^^
-modifier.rb:62:1: C: Tab detected.
-					yielder.yield(combine_values(merged))
-^^^^^
-modifier.rb:63:1: C: Tab detected.
-				rescue StopIteration
-^^^^
-modifier.rb:64:1: C: Tab detected.
-					break
-^^^^^
-modifier.rb:64:5: C: Use 2 (not 1) spaces for indentation.
-					break
-    ^
-modifier.rb:65:1: C: Tab detected.
-				end
-^^^^
-modifier.rb:66:1: C: Tab detected.
-			end
-^^^
-modifier.rb:67:1: C: Tab detected.
-		end
-^^
-modifier.rb:69:5: C: Inconsistent indentation detected.
-    done = false
-    ^^^^^^^^^^^^
-modifier.rb:70:5: C: Inconsistent indentation detected.
-    file_index = 0
-    ^^^^^^^^^^^^^^
-modifier.rb:71:5: C: Inconsistent indentation detected.
-    file_name = output.gsub('.txt', '')
-    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-modifier.rb:72:5: C: Inconsistent indentation detected.
-    while not done do
-    ^^^^^^^^^^^^^^^^^
+modifier.rb:48:3: C: Assignment Branch Condition size for modify is too high. [28.91/15]
+  def modify(output, input)
+  ^^^
+modifier.rb:48:3: C: Cyclomatic complexity for modify is too high. [7/6]
+  def modify(output, input)
+  ^^^
+modifier.rb:48:3: C: Method has too many lines. [41/10]
+  def modify(output, input)
+  ^^^
+modifier.rb:58:7: C: Use [33mKernel#loop[0m for infinite loops.
+      while true
+      ^^^^^
+modifier.rb:58:13: W: Literal [33mtrue[0m appeared in a condition.
+      while true
+            ^^^^
 modifier.rb:72:5: C: Favor [33muntil[0m over [33mwhile[0m for negative conditions.
     while not done do
     ^^^^^^^^^^^^^^^^^
@@ -214,488 +67,110 @@ modifier.rb:72:11: C: Use [33m![0m instead of [33mnot[0m.
 modifier.rb:72:20: C: Do not use [33mdo[0m with multi-line [33mwhile[0m.
     while not done do
                    ^^
-modifier.rb:73:1: C: Tab detected.
-		  CSV.open(file_name + "_#{file_index}.txt", "wb", { :col_sep => "\t", :headers => :first_row, :row_sep => "\r\n" }) do |csv|
-^^
-modifier.rb:73:5: C: Use 2 (not 0) spaces for indentation.
-		  CSV.open(file_name + "_#{file_index}.txt", "wb", { :col_sep => "\t", :headers => :first_row, :row_sep => "\r\n" }) do |csv|
-    
-modifier.rb:73:48: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-		  CSV.open(file_name + "_#{file_index}.txt", "wb", { :col_sep => "\t", :headers => :first_row, :row_sep => "\r\n" }) do |csv|
-                                               ^^^^
-modifier.rb:73:54: C: Redundant curly braces around a hash parameter.
-		  CSV.open(file_name + "_#{file_index}.txt", "wb", { :col_sep => "\t", :headers => :first_row, :row_sep => "\r\n" }) do |csv|
-                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-modifier.rb:73:56: C: Use the new Ruby 1.9 hash syntax.
-		  CSV.open(file_name + "_#{file_index}.txt", "wb", { :col_sep => "\t", :headers => :first_row, :row_sep => "\r\n" }) do |csv|
-                                                       ^^^^^^^^^^^
-modifier.rb:73:74: C: Use the new Ruby 1.9 hash syntax.
-		  CSV.open(file_name + "_#{file_index}.txt", "wb", { :col_sep => "\t", :headers => :first_row, :row_sep => "\r\n" }) do |csv|
-                                                                         ^^^^^^^^^^^
-modifier.rb:73:81: C: Line is too long. [127/80]
-		  CSV.open(file_name + "_#{file_index}.txt", "wb", { :col_sep => "\t", :headers => :first_row, :row_sep => "\r\n" }) do |csv|
-                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-modifier.rb:73:98: C: Use the new Ruby 1.9 hash syntax.
-		  CSV.open(file_name + "_#{file_index}.txt", "wb", { :col_sep => "\t", :headers => :first_row, :row_sep => "\r\n" }) do |csv|
-                                                                                                 ^^^^^^^^^^^
-modifier.rb:74:1: C: Tab detected.
-			  headers_written = false
-^^^
-modifier.rb:74:5: C: Use 2 (not 1) spaces for indentation.
-			  headers_written = false
-    ^
-modifier.rb:75:9: C: Inconsistent indentation detected.
-        line_count = 0
-        ^^^^^^^^^^^^^^
-modifier.rb:76:1: C: Tab detected.
-			  while line_count < LINES_PER_FILE
-^^^
-modifier.rb:77:1: C: Tab detected.
-				  begin
-^^^^
-modifier.rb:77:6: C: Use 2 (not 1) spaces for indentation.
-				  begin
-     ^
-modifier.rb:78:1: C: Tab detected.
-					  merged = merger.next
-^^^^^
-modifier.rb:78:7: C: Use 2 (not 1) spaces for indentation.
-					  merged = merger.next
-      ^
-modifier.rb:79:1: C: Tab detected.
-					  if not headers_written
-^^^^^
-modifier.rb:79:8: C: Favor [33munless[0m over [33mif[0m for negative conditions.
-					  if not headers_written
-       ^^^^^^^^^^^^^^^^^^^^^^
-modifier.rb:79:11: C: Use [33m![0m instead of [33mnot[0m.
-					  if not headers_written
-          ^^^
-modifier.rb:80:1: C: Tab detected.
-						  csv << merged.keys
-^^^^^^
-modifier.rb:80:8: C: Use 2 (not 1) spaces for indentation.
-						  csv << merged.keys
-       ^
-modifier.rb:81:1: C: Tab detected.
-						  headers_written = true
-^^^^^^
-modifier.rb:82:15: C: Inconsistent indentation detected.
-              line_count +=1
-              ^^^^^^^^^^^^^^
+modifier.rb:73:50: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+      CSV.open(file_name + "_#{file_index}.txt", "wb", { :col_sep => "\t", :headers => :first_row, :row_sep => "\r\n" }) do |csv|
+                                                 ^^^^
+modifier.rb:73:56: C: Redundant curly braces around a hash parameter.
+      CSV.open(file_name + "_#{file_index}.txt", "wb", { :col_sep => "\t", :headers => :first_row, :row_sep => "\r\n" }) do |csv|
+                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+modifier.rb:73:58: C: Use the new Ruby 1.9 hash syntax.
+      CSV.open(file_name + "_#{file_index}.txt", "wb", { :col_sep => "\t", :headers => :first_row, :row_sep => "\r\n" }) do |csv|
+                                                         ^^^^^^^^^^^
+modifier.rb:73:76: C: Use the new Ruby 1.9 hash syntax.
+      CSV.open(file_name + "_#{file_index}.txt", "wb", { :col_sep => "\t", :headers => :first_row, :row_sep => "\r\n" }) do |csv|
+                                                                           ^^^^^^^^^^^
+modifier.rb:73:81: C: Line is too long. [129/80]
+      CSV.open(file_name + "_#{file_index}.txt", "wb", { :col_sep => "\t", :headers => :first_row, :row_sep => "\r\n" }) do |csv|
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+modifier.rb:73:100: C: Use the new Ruby 1.9 hash syntax.
+      CSV.open(file_name + "_#{file_index}.txt", "wb", { :col_sep => "\t", :headers => :first_row, :row_sep => "\r\n" }) do |csv|
+                                                                                                   ^^^^^^^^^^^
+modifier.rb:79:13: C: Favor [33munless[0m over [33mif[0m for negative conditions.
+            if not headers_written
+            ^^^^^^^^^^^^^^^^^^^^^^
+modifier.rb:79:16: C: Use [33m![0m instead of [33mnot[0m.
+            if not headers_written
+               ^^^
 modifier.rb:82:26: C: Surrounding space missing for operator [33m+=[0m.
               line_count +=1
                          ^^
-modifier.rb:83:1: C: Tab detected.
-					  end
-^^^^^
-modifier.rb:84:1: C: Tab detected.
-					  csv << merged
-^^^^^
-modifier.rb:85:13: C: Inconsistent indentation detected.
-            line_count +=1
-            ^^^^^^^^^^^^^^
 modifier.rb:85:24: C: Surrounding space missing for operator [33m+=[0m.
             line_count +=1
                        ^^
-modifier.rb:86:1: C: Tab detected.
-				  rescue StopIteration
-^^^^
-modifier.rb:87:7: C: Use 2 (not 6) spaces for indentation.
-            done = true
-      ^^^^^^
-modifier.rb:88:1: C: Tab detected.
-					  break
-^^^^^
-modifier.rb:88:8: C: Inconsistent indentation detected.
-					  break
-       ^^^^^
-modifier.rb:89:1: C: Tab detected.
-				  end
-^^^^
-modifier.rb:90:1: C: Tab detected.
-			  end
-^^^
-modifier.rb:91:9: C: Inconsistent indentation detected.
-        file_index += 1
-        ^^^^^^^^^^^^^^^
-modifier.rb:92:1: C: Tab detected.
-		  end
-^^
-modifier.rb:94:1: C: Tab detected.
-	end
-^
-modifier.rb:96:1: C: Tab detected.
-	private
-^
-modifier.rb:96:2: C: Indent access modifiers like [33mprivate[0m.
-	private
- ^^^^^^^
-modifier.rb:98:1: C: Tab detected.
-	def combine(merged)
-^
-modifier.rb:99:1: C: Tab detected.
-		result = []
-^^
-modifier.rb:99:2: C: Use 2 (not 1) spaces for indentation.
-		result = []
- ^
-modifier.rb:100:1: C: Tab detected.
-		merged.each do |_, hash|
-^^
-modifier.rb:101:1: C: Tab detected.
-			result << combine_values(hash)
-^^^
-modifier.rb:101:3: C: Use 2 (not 1) spaces for indentation.
-			result << combine_values(hash)
-  ^
-modifier.rb:102:1: C: Tab detected.
-		end
-^^
-modifier.rb:103:1: C: Tab detected.
-		result
-^^
-modifier.rb:104:1: C: Tab detected.
-	end
-^
-modifier.rb:106:1: C: Tab detected.
-	def combine_values(hash)
-^
-modifier.rb:106:2: C: Assignment Branch Condition size for combine_values is too high. [40.11/15]
-	def combine_values(hash)
- ^^^
-modifier.rb:106:2: C: Method has too many lines. [19/10]
-	def combine_values(hash)
- ^^^
-modifier.rb:107:1: C: Tab detected.
-		LAST_VALUE_WINS.each do |key|
-^^
-modifier.rb:107:2: C: Use 2 (not 1) spaces for indentation.
-		LAST_VALUE_WINS.each do |key|
- ^
-modifier.rb:108:1: C: Tab detected.
-			hash[key] = hash[key].last
-^^^
-modifier.rb:108:3: C: Use 2 (not 1) spaces for indentation.
-			hash[key] = hash[key].last
-  ^
-modifier.rb:109:1: C: Tab detected.
-		end
-^^
-modifier.rb:110:1: C: Tab detected.
-		LAST_REAL_VALUE_WINS.each do |key|
-^^
-modifier.rb:111:1: C: Tab detected.
-			hash[key] = hash[key].select {|v| not (v.nil? or v == 0 or v == '0' or v == '')}.last
-^^^
-modifier.rb:111:3: C: Use 2 (not 1) spaces for indentation.
-			hash[key] = hash[key].select {|v| not (v.nil? or v == 0 or v == '0' or v == '')}.last
-  ^
-modifier.rb:111:26: C: Use [33mreverse.find[0m instead of [33mselect.last[0m.
-			hash[key] = hash[key].select {|v| not (v.nil? or v == 0 or v == '0' or v == '')}.last
-                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-modifier.rb:111:33: C: Space between { and | missing.
-			hash[key] = hash[key].select {|v| not (v.nil? or v == 0 or v == '0' or v == '')}.last
-                                ^^
-modifier.rb:111:38: C: Use [33m![0m instead of [33mnot[0m.
-			hash[key] = hash[key].select {|v| not (v.nil? or v == 0 or v == '0' or v == '')}.last
-                                     ^^^
-modifier.rb:111:50: C: Use [33m||[0m instead of [33mor[0m.
-			hash[key] = hash[key].select {|v| not (v.nil? or v == 0 or v == '0' or v == '')}.last
-                                                 ^^
-modifier.rb:111:60: C: Use [33m||[0m instead of [33mor[0m.
-			hash[key] = hash[key].select {|v| not (v.nil? or v == 0 or v == '0' or v == '')}.last
-                                                           ^^
-modifier.rb:111:72: C: Use [33m||[0m instead of [33mor[0m.
-			hash[key] = hash[key].select {|v| not (v.nil? or v == 0 or v == '0' or v == '')}.last
-                                                                       ^^
-modifier.rb:111:81: C: Line is too long. [88/80]
-			hash[key] = hash[key].select {|v| not (v.nil? or v == 0 or v == '0' or v == '')}.last
-                                                                                ^^^^^^^^
-modifier.rb:111:83: C: Space missing inside }.
-			hash[key] = hash[key].select {|v| not (v.nil? or v == 0 or v == '0' or v == '')}.last
-                                                                                  ^
-modifier.rb:112:1: C: Tab detected.
-		end
-^^
-modifier.rb:113:1: C: Tab detected.
-		INT_VALUES.each do |key|
-^^
-modifier.rb:114:1: C: Tab detected.
-			hash[key] = hash[key][0].to_s
-^^^
-modifier.rb:114:3: C: Use 2 (not 1) spaces for indentation.
-			hash[key] = hash[key][0].to_s
-  ^
-modifier.rb:115:1: C: Tab detected.
-		end
-^^
-modifier.rb:116:1: C: Tab detected.
-		FLOAT_VALUES.each do |key|
-^^
-modifier.rb:117:1: C: Tab detected.
-			hash[key] = hash[key][0].from_german_to_f.to_german_s
-^^^
-modifier.rb:117:3: C: Use 2 (not 1) spaces for indentation.
-			hash[key] = hash[key][0].from_german_to_f.to_german_s
-  ^
-modifier.rb:118:1: C: Tab detected.
-		end
-^^
-modifier.rb:119:1: C: Tab detected.
-		['number of commissions'].each do |key|
-^^
-modifier.rb:120:1: C: Tab detected.
-			hash[key] = (@cancellation_factor * hash[key][0].from_german_to_f).to_german_s
-^^^
-modifier.rb:120:3: C: Use 2 (not 1) spaces for indentation.
-			hash[key] = (@cancellation_factor * hash[key][0].from_german_to_f).to_german_s
-  ^
-modifier.rb:120:81: C: Line is too long. [81/80]
-			hash[key] = (@cancellation_factor * hash[key][0].from_german_to_f).to_german_s
-                                                                                ^
-modifier.rb:121:1: C: Tab detected.
-		end
-^^
-modifier.rb:122:1: C: Tab detected.
-		['Commission Value', 'ACCOUNT - Commission Value', 'CAMPAIGN - Commission Value', 'BRAND - Commission Value', 'BRAND+CATEGORY - Commission Value', 'ADGROUP - Commission Value', 'KEYWORD - Commission Value'].each do |key|
-^^
-modifier.rb:122:81: C: Line is too long. [222/80]
-		['Commission Value', 'ACCOUNT - Commission Value', 'CAMPAIGN - Commission Value', 'BRAND - Commission Value', 'BRAND+CATEGORY - Commission Value', 'ADGROUP - Commission Value', 'KEYWORD - Commission Value'].each do |key|
-                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-modifier.rb:123:1: C: Tab detected.
-			hash[key] = (@cancellation_factor * @saleamount_factor * hash[key][0].from_german_to_f).to_german_s
-^^^
-modifier.rb:123:3: C: Use 2 (not 1) spaces for indentation.
-			hash[key] = (@cancellation_factor * @saleamount_factor * hash[key][0].from_german_to_f).to_german_s
-  ^
-modifier.rb:123:81: C: Line is too long. [102/80]
-			hash[key] = (@cancellation_factor * @saleamount_factor * hash[key][0].from_german_to_f).to_german_s
-                                                                                ^^^^^^^^^^^^^^^^^^^^^^
-modifier.rb:124:1: C: Tab detected.
-		end
-^^
-modifier.rb:125:1: C: Tab detected.
-		hash
-^^
-modifier.rb:126:1: C: Tab detected.
-	end
-^
-modifier.rb:128:1: C: Tab detected.
-	def combine_hashes(list_of_rows)
-^
-modifier.rb:128:2: C: Method has too many lines. [15/10]
-	def combine_hashes(list_of_rows)
- ^^^
-modifier.rb:129:1: C: Tab detected.
-		keys = []
-^^
-modifier.rb:129:2: C: Use 2 (not 1) spaces for indentation.
-		keys = []
- ^
-modifier.rb:130:1: C: Tab detected.
-		list_of_rows.each do |row|
-^^
-modifier.rb:131:1: C: Tab detected.
-			next if row.nil?
-^^^
-modifier.rb:131:3: C: Use 2 (not 1) spaces for indentation.
-			next if row.nil?
-  ^
-modifier.rb:132:1: C: Tab detected.
-			row.headers.each do |key|
-^^^
-modifier.rb:133:1: C: Tab detected.
-				keys << key
-^^^^
-modifier.rb:133:4: C: Use 2 (not 1) spaces for indentation.
-				keys << key
-   ^
-modifier.rb:134:1: C: Tab detected.
-			end
-^^^
-modifier.rb:135:1: C: Tab detected.
-		end
-^^
-modifier.rb:136:1: C: Tab detected.
-		result = {}
-^^
-modifier.rb:137:1: C: Tab detected.
-		keys.each do |key|
-^^
-modifier.rb:138:1: C: Tab detected.
-			result[key] = []
-^^^
-modifier.rb:138:3: C: Use 2 (not 1) spaces for indentation.
-			result[key] = []
-  ^
-modifier.rb:139:1: C: Tab detected.
-			list_of_rows.each do |row|
-^^^
-modifier.rb:140:1: C: Tab detected.
-				result[key] << (row.nil? ? nil : row[key])
-^^^^
-modifier.rb:140:4: C: Use 2 (not 1) spaces for indentation.
-				result[key] << (row.nil? ? nil : row[key])
-   ^
-modifier.rb:141:1: C: Tab detected.
-			end
-^^^
-modifier.rb:142:1: C: Tab detected.
-		end
-^^
-modifier.rb:143:1: C: Tab detected.
-		result
-^^
-modifier.rb:144:1: C: Tab detected.
-	end
-^
-modifier.rb:146:1: C: Tab detected.
-	DEFAULT_CSV_OPTIONS = { :col_sep => "\t", :headers => :first_row }
-^
-modifier.rb:146:26: C: Use the new Ruby 1.9 hash syntax.
-	DEFAULT_CSV_OPTIONS = { :col_sep => "\t", :headers => :first_row }
-                         ^^^^^^^^^^^
-modifier.rb:146:44: C: Use the new Ruby 1.9 hash syntax.
-	DEFAULT_CSV_OPTIONS = { :col_sep => "\t", :headers => :first_row }
-                                           ^^^^^^^^^^^
-modifier.rb:148:1: C: Tab detected.
-	def parse(file)
-^
-modifier.rb:149:1: C: Tab detected.
-		CSV.read(file, DEFAULT_CSV_OPTIONS)
-^^
-modifier.rb:149:2: C: Use 2 (not 1) spaces for indentation.
-		CSV.read(file, DEFAULT_CSV_OPTIONS)
- ^
-modifier.rb:150:1: C: Tab detected.
-	end
-^
-modifier.rb:152:1: C: Tab detected.
-	def lazy_read(file)
-^
-modifier.rb:153:1: C: Tab detected.
-		Enumerator.new do |yielder|
-^^
-modifier.rb:153:2: C: Use 2 (not 1) spaces for indentation.
-		Enumerator.new do |yielder|
- ^
-modifier.rb:154:1: C: Tab detected.
-			CSV.foreach(file, DEFAULT_CSV_OPTIONS) do |row|
-^^^
-modifier.rb:154:3: C: Use 2 (not 1) spaces for indentation.
-			CSV.foreach(file, DEFAULT_CSV_OPTIONS) do |row|
-  ^
-modifier.rb:155:1: C: Tab detected.
-				yielder.yield(row)
-^^^^
-modifier.rb:155:4: C: Use 2 (not 1) spaces for indentation.
-				yielder.yield(row)
-   ^
-modifier.rb:156:1: C: Tab detected.
-			end
-^^^
-modifier.rb:157:1: C: Tab detected.
-		end
-^^
-modifier.rb:158:1: C: Tab detected.
-	end
-^
-modifier.rb:160:1: C: Tab detected.
-	def write(content, headers, output)
-^
-modifier.rb:161:1: C: Tab detected.
-		CSV.open(output, "wb", { :col_sep => "\t", :headers => :first_row, :row_sep => "\r\n" }) do |csv|
-^^
-modifier.rb:161:2: C: Use 2 (not 1) spaces for indentation.
-		CSV.open(output, "wb", { :col_sep => "\t", :headers => :first_row, :row_sep => "\r\n" }) do |csv|
- ^
-modifier.rb:161:20: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-		CSV.open(output, "wb", { :col_sep => "\t", :headers => :first_row, :row_sep => "\r\n" }) do |csv|
-                   ^^^^
-modifier.rb:161:26: C: Redundant curly braces around a hash parameter.
-		CSV.open(output, "wb", { :col_sep => "\t", :headers => :first_row, :row_sep => "\r\n" }) do |csv|
-                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-modifier.rb:161:28: C: Use the new Ruby 1.9 hash syntax.
-		CSV.open(output, "wb", { :col_sep => "\t", :headers => :first_row, :row_sep => "\r\n" }) do |csv|
-                           ^^^^^^^^^^^
-modifier.rb:161:46: C: Use the new Ruby 1.9 hash syntax.
-		CSV.open(output, "wb", { :col_sep => "\t", :headers => :first_row, :row_sep => "\r\n" }) do |csv|
-                                             ^^^^^^^^^^^
-modifier.rb:161:70: C: Use the new Ruby 1.9 hash syntax.
-		CSV.open(output, "wb", { :col_sep => "\t", :headers => :first_row, :row_sep => "\r\n" }) do |csv|
-                                                                     ^^^^^^^^^^^
-modifier.rb:161:81: C: Line is too long. [99/80]
-		CSV.open(output, "wb", { :col_sep => "\t", :headers => :first_row, :row_sep => "\r\n" }) do |csv|
-                                                                                ^^^^^^^^^^^^^^^^^^^
-modifier.rb:162:1: C: Tab detected.
-			csv << headers
-^^^
-modifier.rb:162:3: C: Use 2 (not 1) spaces for indentation.
-			csv << headers
-  ^
-modifier.rb:163:1: C: Tab detected.
-			content.each do |row|
-^^^
-modifier.rb:164:1: C: Tab detected.
-				csv << row
-^^^^
-modifier.rb:164:4: C: Use 2 (not 1) spaces for indentation.
-				csv << row
-   ^
-modifier.rb:165:1: C: Tab detected.
-			end
-^^^
-modifier.rb:166:1: C: Tab detected.
-		end
-^^
-modifier.rb:167:1: C: Tab detected.
-	end
-^
-modifier.rb:169:1: C: Tab detected.
-	public
-^
-modifier.rb:169:2: C: Indent access modifiers like [33mpublic[0m.
-	public
- ^^^^^^
-modifier.rb:169:2: C: Keep a blank line before and after [33mpublic[0m.
-	public
- ^^^^^^
-modifier.rb:170:1: C: Tab detected.
-	def sort(file)
-^
-modifier.rb:171:1: C: Tab detected.
-		output = "#{file}.sorted"
-^^
-modifier.rb:171:2: C: Use 2 (not 1) spaces for indentation.
-		output = "#{file}.sorted"
- ^
-modifier.rb:172:1: C: Tab detected.
-		content_as_table = parse(file)
-^^
-modifier.rb:173:1: C: Tab detected.
-		headers = content_as_table.headers
-^^
-modifier.rb:174:1: C: Tab detected.
-		index_of_key = headers.index('Clicks')
-^^
-modifier.rb:175:1: C: Tab detected.
-		content = content_as_table.sort_by { |a| -a[index_of_key].to_i }
-^^
-modifier.rb:176:1: C: Tab detected.
-		write(content, headers, output)
-^^
-modifier.rb:177:1: C: Tab detected.
-		return output
-^^
-modifier.rb:177:3: C: Redundant [33mreturn[0m detected.
-		return output
+modifier.rb:106:3: C: Assignment Branch Condition size for combine_values is too high. [40.11/15]
+  def combine_values(hash)
+  ^^^
+modifier.rb:106:3: C: Method has too many lines. [19/10]
+  def combine_values(hash)
+  ^^^
+modifier.rb:111:29: C: Use [33mreverse.find[0m instead of [33mselect.last[0m.
+      hash[key] = hash[key].select {|v| not (v.nil? or v == 0 or v == '0' or v == '')}.last
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+modifier.rb:111:36: C: Space between { and | missing.
+      hash[key] = hash[key].select {|v| not (v.nil? or v == 0 or v == '0' or v == '')}.last
+                                   ^^
+modifier.rb:111:41: C: Use [33m![0m instead of [33mnot[0m.
+      hash[key] = hash[key].select {|v| not (v.nil? or v == 0 or v == '0' or v == '')}.last
+                                        ^^^
+modifier.rb:111:53: C: Use [33m||[0m instead of [33mor[0m.
+      hash[key] = hash[key].select {|v| not (v.nil? or v == 0 or v == '0' or v == '')}.last
+                                                    ^^
+modifier.rb:111:63: C: Use [33m||[0m instead of [33mor[0m.
+      hash[key] = hash[key].select {|v| not (v.nil? or v == 0 or v == '0' or v == '')}.last
+                                                              ^^
+modifier.rb:111:75: C: Use [33m||[0m instead of [33mor[0m.
+      hash[key] = hash[key].select {|v| not (v.nil? or v == 0 or v == '0' or v == '')}.last
+                                                                          ^^
+modifier.rb:111:81: C: Line is too long. [91/80]
+      hash[key] = hash[key].select {|v| not (v.nil? or v == 0 or v == '0' or v == '')}.last
+                                                                                ^^^^^^^^^^^
+modifier.rb:111:86: C: Space missing inside }.
+      hash[key] = hash[key].select {|v| not (v.nil? or v == 0 or v == '0' or v == '')}.last
+                                                                                     ^
+modifier.rb:120:81: C: Line is too long. [84/80]
+      hash[key] = (@cancellation_factor * hash[key][0].from_german_to_f).to_german_s
+                                                                                ^^^^
+modifier.rb:122:81: C: Line is too long. [224/80]
+    ['Commission Value', 'ACCOUNT - Commission Value', 'CAMPAIGN - Commission Value', 'BRAND - Commission Value', 'BRAND+CATEGORY - Commission Value', 'ADGROUP - Commission Value', 'KEYWORD - Commission Value'].each do |key|
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+modifier.rb:123:81: C: Line is too long. [105/80]
+      hash[key] = (@cancellation_factor * @saleamount_factor * hash[key][0].from_german_to_f).to_german_s
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^
+modifier.rb:128:3: C: Method has too many lines. [15/10]
+  def combine_hashes(list_of_rows)
+  ^^^
+modifier.rb:146:27: C: Use the new Ruby 1.9 hash syntax.
+  DEFAULT_CSV_OPTIONS = { :col_sep => "\t", :headers => :first_row }
+                          ^^^^^^^^^^^
+modifier.rb:146:45: C: Use the new Ruby 1.9 hash syntax.
+  DEFAULT_CSV_OPTIONS = { :col_sep => "\t", :headers => :first_row }
+                                            ^^^^^^^^^^^
+modifier.rb:161:22: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    CSV.open(output, "wb", { :col_sep => "\t", :headers => :first_row, :row_sep => "\r\n" }) do |csv|
+                     ^^^^
+modifier.rb:161:28: C: Redundant curly braces around a hash parameter.
+    CSV.open(output, "wb", { :col_sep => "\t", :headers => :first_row, :row_sep => "\r\n" }) do |csv|
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+modifier.rb:161:30: C: Use the new Ruby 1.9 hash syntax.
+    CSV.open(output, "wb", { :col_sep => "\t", :headers => :first_row, :row_sep => "\r\n" }) do |csv|
+                             ^^^^^^^^^^^
+modifier.rb:161:48: C: Use the new Ruby 1.9 hash syntax.
+    CSV.open(output, "wb", { :col_sep => "\t", :headers => :first_row, :row_sep => "\r\n" }) do |csv|
+                                               ^^^^^^^^^^^
+modifier.rb:161:72: C: Use the new Ruby 1.9 hash syntax.
+    CSV.open(output, "wb", { :col_sep => "\t", :headers => :first_row, :row_sep => "\r\n" }) do |csv|
+                                                                       ^^^^^^^^^^^
+modifier.rb:161:81: C: Line is too long. [101/80]
+    CSV.open(output, "wb", { :col_sep => "\t", :headers => :first_row, :row_sep => "\r\n" }) do |csv|
+                                                                                ^^^^^^^^^^^^^^^^^^^^^
+modifier.rb:169:3: C: Keep a blank line before and after [33mpublic[0m.
+  public
   ^^^^^^
-modifier.rb:178:1: C: Tab detected.
-	end
-^
+modifier.rb:177:5: C: Redundant [33mreturn[0m detected.
+    return output
+    ^^^^^^
 modifier.rb:187:6: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
 puts "DONE modifying"
      ^^^^^^^^^^^^^^^^
 
-1 file inspected, 232 offenses detected
+1 file inspected, 57 offenses detected
