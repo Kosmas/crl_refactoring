@@ -62,23 +62,14 @@ modifier.rb:72:16: C: Do not use [33mdo[0m with multi-line [33muntil[0m.
     until done do
                ^^
 modifier.rb:73:50: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-      CSV.open(file_name + "_#{file_index}.txt", "wb", { :col_sep => "\t", :headers => :first_row, :row_sep => "\r\n" }) do |csv|
+      CSV.open(file_name + "_#{file_index}.txt", "wb", { col_sep: "\t", headers: :first_row, row_sep: "\r\n" }) do |csv|
                                                  ^^^^
 modifier.rb:73:56: C: Redundant curly braces around a hash parameter.
-      CSV.open(file_name + "_#{file_index}.txt", "wb", { :col_sep => "\t", :headers => :first_row, :row_sep => "\r\n" }) do |csv|
-                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-modifier.rb:73:58: C: Use the new Ruby 1.9 hash syntax.
-      CSV.open(file_name + "_#{file_index}.txt", "wb", { :col_sep => "\t", :headers => :first_row, :row_sep => "\r\n" }) do |csv|
-                                                         ^^^^^^^^^^^
-modifier.rb:73:76: C: Use the new Ruby 1.9 hash syntax.
-      CSV.open(file_name + "_#{file_index}.txt", "wb", { :col_sep => "\t", :headers => :first_row, :row_sep => "\r\n" }) do |csv|
-                                                                           ^^^^^^^^^^^
-modifier.rb:73:81: C: Line is too long. [129/80]
-      CSV.open(file_name + "_#{file_index}.txt", "wb", { :col_sep => "\t", :headers => :first_row, :row_sep => "\r\n" }) do |csv|
-                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-modifier.rb:73:100: C: Use the new Ruby 1.9 hash syntax.
-      CSV.open(file_name + "_#{file_index}.txt", "wb", { :col_sep => "\t", :headers => :first_row, :row_sep => "\r\n" }) do |csv|
-                                                                                                   ^^^^^^^^^^^
+      CSV.open(file_name + "_#{file_index}.txt", "wb", { col_sep: "\t", headers: :first_row, row_sep: "\r\n" }) do |csv|
+                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+modifier.rb:73:81: C: Line is too long. [120/80]
+      CSV.open(file_name + "_#{file_index}.txt", "wb", { col_sep: "\t", headers: :first_row, row_sep: "\r\n" }) do |csv|
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 modifier.rb:82:26: C: Surrounding space missing for operator [33m+=[0m.
               line_count +=1
                          ^^
@@ -115,30 +106,18 @@ modifier.rb:123:81: C: Line is too long. [105/80]
 modifier.rb:128:3: C: Method has too many lines. [15/10]
   def combine_hashes(list_of_rows)
   ^^^
-modifier.rb:146:27: C: Use the new Ruby 1.9 hash syntax.
-  DEFAULT_CSV_OPTIONS = { :col_sep => "\t", :headers => :first_row }
-                          ^^^^^^^^^^^
-modifier.rb:146:45: C: Use the new Ruby 1.9 hash syntax.
-  DEFAULT_CSV_OPTIONS = { :col_sep => "\t", :headers => :first_row }
-                                            ^^^^^^^^^^^
+modifier.rb:146:34: C: Space missing after colon.
+  DEFAULT_CSV_OPTIONS = { col_sep:"\t", headers: :first_row }
+                                 ^
 modifier.rb:161:22: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-    CSV.open(output, "wb", { :col_sep => "\t", :headers => :first_row, :row_sep => "\r\n" }) do |csv|
+    CSV.open(output, "wb", { col_sep: "\t", headers: :first_row, row_sep: "\r\n" }) do |csv|
                      ^^^^
 modifier.rb:161:28: C: Redundant curly braces around a hash parameter.
-    CSV.open(output, "wb", { :col_sep => "\t", :headers => :first_row, :row_sep => "\r\n" }) do |csv|
-                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-modifier.rb:161:30: C: Use the new Ruby 1.9 hash syntax.
-    CSV.open(output, "wb", { :col_sep => "\t", :headers => :first_row, :row_sep => "\r\n" }) do |csv|
-                             ^^^^^^^^^^^
-modifier.rb:161:48: C: Use the new Ruby 1.9 hash syntax.
-    CSV.open(output, "wb", { :col_sep => "\t", :headers => :first_row, :row_sep => "\r\n" }) do |csv|
-                                               ^^^^^^^^^^^
-modifier.rb:161:72: C: Use the new Ruby 1.9 hash syntax.
-    CSV.open(output, "wb", { :col_sep => "\t", :headers => :first_row, :row_sep => "\r\n" }) do |csv|
-                                                                       ^^^^^^^^^^^
-modifier.rb:161:81: C: Line is too long. [101/80]
-    CSV.open(output, "wb", { :col_sep => "\t", :headers => :first_row, :row_sep => "\r\n" }) do |csv|
-                                                                                ^^^^^^^^^^^^^^^^^^^^^
+    CSV.open(output, "wb", { col_sep: "\t", headers: :first_row, row_sep: "\r\n" }) do |csv|
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+modifier.rb:161:81: C: Line is too long. [92/80]
+    CSV.open(output, "wb", { col_sep: "\t", headers: :first_row, row_sep: "\r\n" }) do |csv|
+                                                                                ^^^^^^^^^^^^
 modifier.rb:169:3: C: Keep a blank line before and after [33mpublic[0m.
   public
   ^^^^^^
@@ -149,4 +128,4 @@ modifier.rb:187:6: C: Prefer single-quoted strings when you don't need string in
 puts "DONE modifying"
      ^^^^^^^^^^^^^^^^
 
-1 file inspected, 49 offenses detected
+1 file inspected, 42 offenses detected
