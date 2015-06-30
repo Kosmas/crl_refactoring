@@ -6,7 +6,7 @@ Offenses:
 lib/combiner.rb:4:81: C: Line is too long. [96/80]
 # - block combining two elements having the same key or a single element, if there is no partner
                                                                                 ^^^^^^^^^^^^^^^^
-lib/combiner.rb:16:3: C: Assignment Branch Condition size for combine is too high. [37.03/15]
+lib/combiner.rb:16:3: C: Assignment Branch Condition size for combine is too high. [36.08/15]
   def combine(*enumerators)
   ^^^
 lib/combiner.rb:16:3: C: Cyclomatic complexity for combine is too high. [12/6]
@@ -21,15 +21,9 @@ lib/combiner.rb:16:3: C: Perceived complexity for combine is too high. [13/7]
 lib/combiner.rb:19:14: C: Pass [33m&:nil?[0m as an argument to [33mall?[0m instead of a block.
       done = enumerators.all? { |enumerator| enumerator.nil? }
              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-lib/combiner.rb:20:7: C: Favor [33muntil[0m over [33mwhile[0m for negative conditions.
-      while not done
-      ^^^^^^^^^^^^^^
 lib/combiner.rb:20:7: C: Use [33mnext[0m to skip iteration.
-      while not done
+      until done
       ^^^^^
-lib/combiner.rb:20:13: C: Use [33m![0m instead of [33mnot[0m.
-      while not done
-            ^^^
 lib/combiner.rb:21:21: C: Use [33mnext[0m to skip iteration.
         last_values.each_with_index do |value, index|
                     ^^^^^^^^^^^^^^^
@@ -52,4 +46,4 @@ lib/combiner.rb:34:23: C: Use [33m&&[0m instead of [33mand[0m.
             if a.nil? and b.nil?
                       ^^^
 
-1 file inspected, 16 offenses detected
+1 file inspected, 14 offenses detected
