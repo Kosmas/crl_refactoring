@@ -1,9 +1,9 @@
-require File.expand_path('lib/combiner',File.dirname(__FILE__))
+require File.expand_path('lib/combiner', File.dirname(__FILE__))
 require 'csv'
 require 'date'
 
 def latest(name)
-  files = Dir["#{ ENV["HOME"] }/workspace/*#{name}*.txt"]
+  files = Dir["#{ENV["HOME"]}/workspace/*#{name}*.txt"]
 
   files.sort_by! do |file|
     last_date = /\d+-\d+-\d+_[[:alpha:]]+\.txt$/.match file
@@ -31,7 +31,6 @@ class Float
 end
 
 class Modifier
-
   KEYWORD_UNIQUE_ID = 'Keyword Unique ID'
   LAST_VALUE_WINS = ['Account ID', 'Account Name', 'Campaign', 'Ad Group', 'Keyword', 'Keyword Type', 'Subid', 'Paused', 'Max CPC', 'Keyword Unique ID', 'ACCOUNT', 'CAMPAIGN', 'BRAND', 'BRAND+CATEGORY', 'ADGROUP', 'KEYWORD']
   LAST_REAL_VALUE_WINS = ['Last Avg CPC', 'Last Avg Pos']
@@ -79,10 +78,10 @@ class Modifier
             unless headers_written
               csv << merged.keys
               headers_written = true
-              line_count +=1
+              line_count += 1
             end
             csv << merged
-            line_count +=1
+            line_count += 1
           rescue StopIteration
             done = true
             break
@@ -108,7 +107,7 @@ class Modifier
       hash[key] = hash[key].last
     end
     LAST_REAL_VALUE_WINS.each do |key|
-      hash[key] = hash[key].select {|v| !(v.nil? || v == 0 || v == '0' || v == '')}.last
+      hash[key] = hash[key].select { |v| !(v.nil? || v == 0 || v == '0' || v == '') }.last
     end
     INT_VALUES.each do |key|
       hash[key] = hash[key][0].to_s
@@ -143,7 +142,7 @@ class Modifier
     result
   end
 
-  DEFAULT_CSV_OPTIONS = { col_sep:"\t", headers: :first_row }
+  DEFAULT_CSV_OPTIONS = { col_sep: "\t", headers: :first_row }
 
   def parse(file)
     CSV.read(file, DEFAULT_CSV_OPTIONS)
@@ -167,6 +166,7 @@ class Modifier
   end
 
   public
+
   def sort(file)
     output = "#{file}.sorted"
     content_as_table = parse(file)
