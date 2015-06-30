@@ -3,9 +3,6 @@ W
 
 Offenses:
 
-modifier.rb:6:22: C: Prefer single-quoted strings inside interpolations.
-  files = Dir["#{ENV["HOME"]}/workspace/*#{name}*.txt"]
-                     ^^^^^^
 modifier.rb:10:38: W: Ambiguous regexp literal. Parenthesize the method arguments if it's surely a regexp literal, or add a whitespace to the right of the [33m/[0m if it should be a division.
     last_date = last_date.to_s.match /\d+-\d+-\d+/
                                      ^
@@ -48,14 +45,11 @@ modifier.rb:57:13: W: Literal [33mtrue[0m appeared in a condition.
 modifier.rb:71:16: C: Do not use [33mdo[0m with multi-line [33muntil[0m.
     until done do
                ^^
-modifier.rb:72:50: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-      CSV.open(file_name + "_#{file_index}.txt", "wb", { col_sep: "\t", headers: :first_row, row_sep: "\r\n" }) do |csv|
-                                                 ^^^^
 modifier.rb:72:56: C: Redundant curly braces around a hash parameter.
-      CSV.open(file_name + "_#{file_index}.txt", "wb", { col_sep: "\t", headers: :first_row, row_sep: "\r\n" }) do |csv|
+      CSV.open(file_name + "_#{file_index}.txt", 'wb', { col_sep: '\t', headers: :first_row, row_sep: '\r\n' }) do |csv|
                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 modifier.rb:72:81: C: Line is too long. [120/80]
-      CSV.open(file_name + "_#{file_index}.txt", "wb", { col_sep: "\t", headers: :first_row, row_sep: "\r\n" }) do |csv|
+      CSV.open(file_name + "_#{file_index}.txt", 'wb', { col_sep: '\t', headers: :first_row, row_sep: '\r\n' }) do |csv|
                                                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 modifier.rb:105:3: C: Assignment Branch Condition size for combine_values is too high. [40.11/15]
   def combine_values(hash)
@@ -81,20 +75,14 @@ modifier.rb:122:81: C: Line is too long. [105/80]
 modifier.rb:127:3: C: Method has too many lines. [15/10]
   def combine_hashes(list_of_rows)
   ^^^
-modifier.rb:160:22: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-    CSV.open(output, "wb", { col_sep: "\t", headers: :first_row, row_sep: "\r\n" }) do |csv|
-                     ^^^^
 modifier.rb:160:28: C: Redundant curly braces around a hash parameter.
-    CSV.open(output, "wb", { col_sep: "\t", headers: :first_row, row_sep: "\r\n" }) do |csv|
+    CSV.open(output, 'wb', { col_sep: '\t', headers: :first_row, row_sep: '\r\n' }) do |csv|
                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 modifier.rb:160:81: C: Line is too long. [92/80]
-    CSV.open(output, "wb", { col_sep: "\t", headers: :first_row, row_sep: "\r\n" }) do |csv|
+    CSV.open(output, 'wb', { col_sep: '\t', headers: :first_row, row_sep: '\r\n' }) do |csv|
                                                                                 ^^^^^^^^^^^^
 modifier.rb:177:5: C: Redundant [33mreturn[0m detected.
     return output
     ^^^^^^
-modifier.rb:187:6: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
-puts "DONE modifying"
-     ^^^^^^^^^^^^^^^^
 
-1 file inspected, 31 offenses detected
+1 file inspected, 27 offenses detected

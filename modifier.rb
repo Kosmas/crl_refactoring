@@ -3,7 +3,7 @@ require 'csv'
 require 'date'
 
 def latest(name)
-  files = Dir["#{ENV["HOME"]}/workspace/*#{name}*.txt"]
+  files = Dir["#{ENV['HOME']}/workspace/*#{name}*.txt"]
 
   files.sort_by! do |file|
     last_date = /\d+-\d+-\d+_[[:alpha:]]+\.txt$/.match file
@@ -69,7 +69,7 @@ class Modifier
     file_index = 0
     file_name = output.gsub('.txt', '')
     until done do
-      CSV.open(file_name + "_#{file_index}.txt", "wb", { col_sep: "\t", headers: :first_row, row_sep: "\r\n" }) do |csv|
+      CSV.open(file_name + "_#{file_index}.txt", 'wb', { col_sep: '\t', headers: :first_row, row_sep: '\r\n' }) do |csv|
         headers_written = false
         line_count = 0
         while line_count < LINES_PER_FILE
@@ -157,7 +157,7 @@ class Modifier
   end
 
   def write(content, headers, output)
-    CSV.open(output, "wb", { col_sep: "\t", headers: :first_row, row_sep: "\r\n" }) do |csv|
+    CSV.open(output, 'wb', { col_sep: '\t', headers: :first_row, row_sep: '\r\n' }) do |csv|
       csv << headers
       content.each do |row|
         csv << row
@@ -184,4 +184,4 @@ cancellaction_factor = 0.4
 modifier = Modifier.new(modification_factor, cancellaction_factor)
 modifier.modify(modified, input)
 
-puts "DONE modifying"
+puts 'DONE modifying'
