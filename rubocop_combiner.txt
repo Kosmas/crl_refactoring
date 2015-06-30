@@ -27,23 +27,11 @@ lib/combiner.rb:20:7: C: Use [33mnext[0m to skip iteration.
 lib/combiner.rb:21:21: C: Use [33mnext[0m to skip iteration.
         last_values.each_with_index do |value, index|
                     ^^^^^^^^^^^^^^^
-lib/combiner.rb:22:25: C: Use [33m&&[0m instead of [33mand[0m.
-          if value.nil? and not enumerators[index].nil?
-                        ^^^
-lib/combiner.rb:22:29: C: Use [33m![0m instead of [33mnot[0m.
-          if value.nil? and not enumerators[index].nil?
-                            ^^^
 lib/combiner.rb:31:16: C: Pass [33m&:nil?[0m as an argument to [33mall?[0m instead of a block.
-        done = enumerators.all? { |enumerator| enumerator.nil? } and last_values.compact.empty?
+        done = enumerators.all? { |enumerator| enumerator.nil? } && last_values.compact.empty?
                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-lib/combiner.rb:31:66: C: Use [33m&&[0m instead of [33mand[0m.
-        done = enumerators.all? { |enumerator| enumerator.nil? } and last_values.compact.empty?
-                                                                 ^^^
-lib/combiner.rb:31:81: C: Line is too long. [95/80]
-        done = enumerators.all? { |enumerator| enumerator.nil? } and last_values.compact.empty?
-                                                                                ^^^^^^^^^^^^^^^
-lib/combiner.rb:34:23: C: Use [33m&&[0m instead of [33mand[0m.
-            if a.nil? and b.nil?
-                      ^^^
+lib/combiner.rb:31:81: C: Line is too long. [94/80]
+        done = enumerators.all? { |enumerator| enumerator.nil? } && last_values.compact.empty?
+                                                                                ^^^^^^^^^^^^^^
 
-1 file inspected, 14 offenses detected
+1 file inspected, 10 offenses detected
