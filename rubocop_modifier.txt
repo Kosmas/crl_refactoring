@@ -12,15 +12,9 @@ modifier.rb:10:38: W: Ambiguous regexp literal. Parenthesize the method argument
 modifier.rb:21:1: C: Missing top-level class documentation comment.
 class String
 ^^^^^
-modifier.rb:23:5: C: Redundant [33mself[0m detected.
-    self.gsub(',', '.').to_f
-    ^^^^^^^^^^^^^^^^^^^
 modifier.rb:27:1: C: Missing top-level class documentation comment.
 class Float
 ^^^^^
-modifier.rb:29:5: C: Redundant [33mself[0m detected.
-    self.to_s.gsub('.', ',')
-    ^^^^^^^^^
 modifier.rb:33:1: C: Class has too many lines. [128/100]
 class Modifier
 ^^^^^
@@ -103,4 +97,4 @@ modifier.rb:187:6: C: Prefer single-quoted strings when you don't need string in
 puts "DONE modifying"
      ^^^^^^^^^^^^^^^^
 
-1 file inspected, 33 offenses detected
+1 file inspected, 31 offenses detected
