@@ -69,14 +69,14 @@ class Modifier
     done = false
     file_index = 0
     file_name = output.gsub('.txt', '')
-    while not done do
+    until done do
       CSV.open(file_name + "_#{file_index}.txt", "wb", { :col_sep => "\t", :headers => :first_row, :row_sep => "\r\n" }) do |csv|
         headers_written = false
         line_count = 0
         while line_count < LINES_PER_FILE
           begin
             merged = merger.next
-            if not headers_written
+            unless headers_written
               csv << merged.keys
               headers_written = true
               line_count +=1

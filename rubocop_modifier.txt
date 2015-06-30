@@ -43,7 +43,7 @@ modifier.rb:38:81: C: Line is too long. [166/80]
 modifier.rb:41:20: C: Separate every 3 digits in the integer portion of a number with underscores(_).
   LINES_PER_FILE = 120000
                    ^^^^^^
-modifier.rb:48:3: C: Assignment Branch Condition size for modify is too high. [28.91/15]
+modifier.rb:48:3: C: Assignment Branch Condition size for modify is too high. [27.57/15]
   def modify(output, input)
   ^^^
 modifier.rb:48:3: C: Cyclomatic complexity for modify is too high. [7/6]
@@ -58,15 +58,9 @@ modifier.rb:58:7: C: Use [33mKernel#loop[0m for infinite loops.
 modifier.rb:58:13: W: Literal [33mtrue[0m appeared in a condition.
       while true
             ^^^^
-modifier.rb:72:5: C: Favor [33muntil[0m over [33mwhile[0m for negative conditions.
-    while not done do
-    ^^^^^^^^^^^^^^^^^
-modifier.rb:72:11: C: Use [33m![0m instead of [33mnot[0m.
-    while not done do
-          ^^^
-modifier.rb:72:20: C: Do not use [33mdo[0m with multi-line [33mwhile[0m.
-    while not done do
-                   ^^
+modifier.rb:72:16: C: Do not use [33mdo[0m with multi-line [33muntil[0m.
+    until done do
+               ^^
 modifier.rb:73:50: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
       CSV.open(file_name + "_#{file_index}.txt", "wb", { :col_sep => "\t", :headers => :first_row, :row_sep => "\r\n" }) do |csv|
                                                  ^^^^
@@ -85,12 +79,6 @@ modifier.rb:73:81: C: Line is too long. [129/80]
 modifier.rb:73:100: C: Use the new Ruby 1.9 hash syntax.
       CSV.open(file_name + "_#{file_index}.txt", "wb", { :col_sep => "\t", :headers => :first_row, :row_sep => "\r\n" }) do |csv|
                                                                                                    ^^^^^^^^^^^
-modifier.rb:79:13: C: Favor [33munless[0m over [33mif[0m for negative conditions.
-            if not headers_written
-            ^^^^^^^^^^^^^^^^^^^^^^
-modifier.rb:79:16: C: Use [33m![0m instead of [33mnot[0m.
-            if not headers_written
-               ^^^
 modifier.rb:82:26: C: Surrounding space missing for operator [33m+=[0m.
               line_count +=1
                          ^^
@@ -173,4 +161,4 @@ modifier.rb:187:6: C: Prefer single-quoted strings when you don't need string in
 puts "DONE modifying"
      ^^^^^^^^^^^^^^^^
 
-1 file inspected, 57 offenses detected
+1 file inspected, 53 offenses detected
