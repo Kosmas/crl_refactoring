@@ -12,77 +12,62 @@ class String
 modifier.rb:27:1: C: Missing top-level class documentation comment.
 class Float
 ^^^^^
-modifier.rb:33:1: C: Class has too many lines. [128/100]
+modifier.rb:33:1: C: Class has too many lines. [139/100]
 class Modifier
 ^^^^^
 modifier.rb:33:1: C: Missing top-level class documentation comment.
 class Modifier
 ^^^^^
-modifier.rb:35:81: C: Line is too long. [224/80]
-  LAST_VALUE_WINS = ['Account ID', 'Account Name', 'Campaign', 'Ad Group', 'Keyword', 'Keyword Type', 'Subid', 'Paused', 'Max CPC', 'Keyword Unique ID', 'ACCOUNT', 'CAMPAIGN', 'BRAND', 'BRAND+CATEGORY', 'ADGROUP', 'KEYWORD']
-                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-modifier.rb:37:81: C: Line is too long. [166/80]
-  INT_VALUES = ['Clicks', 'Impressions', 'ACCOUNT - Clicks', 'CAMPAIGN - Clicks', 'BRAND - Clicks', 'BRAND+CATEGORY - Clicks', 'ADGROUP - Clicks', 'KEYWORD - Clicks']
-                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-modifier.rb:40:20: C: Separate every 3 digits in the integer portion of a number with underscores(_).
+modifier.rb:46:20: C: Separate every 3 digits in the integer portion of a number with underscores(_).
   LINES_PER_FILE = 120000
                    ^^^^^^
-modifier.rb:47:3: C: Assignment Branch Condition size for modify is too high. [27.57/15]
+modifier.rb:53:3: C: Assignment Branch Condition size for modify is too high. [27.57/15]
   def modify(output, input)
   ^^^
-modifier.rb:47:3: C: Cyclomatic complexity for modify is too high. [7/6]
+modifier.rb:53:3: C: Cyclomatic complexity for modify is too high. [7/6]
   def modify(output, input)
   ^^^
-modifier.rb:47:3: C: Method has too many lines. [41/10]
+modifier.rb:53:3: C: Method has too many lines. [42/10]
   def modify(output, input)
   ^^^
-modifier.rb:57:7: C: Use [33mKernel#loop[0m for infinite loops.
+modifier.rb:63:7: C: Use [33mKernel#loop[0m for infinite loops.
       while true
       ^^^^^
-modifier.rb:57:13: W: Literal [33mtrue[0m appeared in a condition.
+modifier.rb:63:13: W: Literal [33mtrue[0m appeared in a condition.
       while true
             ^^^^
-modifier.rb:71:16: C: Do not use [33mdo[0m with multi-line [33muntil[0m.
+modifier.rb:77:16: C: Do not use [33mdo[0m with multi-line [33muntil[0m.
     until done do
                ^^
-modifier.rb:72:56: C: Redundant curly braces around a hash parameter.
-      CSV.open(file_name + "_#{file_index}.txt", 'wb', { col_sep: '\t', headers: :first_row, row_sep: '\r\n' }) do |csv|
-                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-modifier.rb:72:81: C: Line is too long. [120/80]
-      CSV.open(file_name + "_#{file_index}.txt", 'wb', { col_sep: '\t', headers: :first_row, row_sep: '\r\n' }) do |csv|
-                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-modifier.rb:105:3: C: Assignment Branch Condition size for combine_values is too high. [40.11/15]
+modifier.rb:79:16: C: Redundant curly braces around a hash parameter.
+               { col_sep: '\t', headers: :first_row, row_sep: '\r\n' }) do |csv|
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+modifier.rb:112:3: C: Assignment Branch Condition size for combine_values is too high. [40.11/15]
   def combine_values(hash)
   ^^^
-modifier.rb:105:3: C: Method has too many lines. [19/10]
+modifier.rb:112:3: C: Method has too many lines. [22/10]
   def combine_values(hash)
   ^^^
-modifier.rb:110:29: C: Use [33mreverse.find[0m instead of [33mselect.last[0m.
+modifier.rb:117:29: C: Use [33mreverse.find[0m instead of [33mselect.last[0m.
       hash[key] = hash[key].select { |v| !(v.nil? || v == 0 || v == '0' || v == '') }.last
                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-modifier.rb:110:81: C: Line is too long. [90/80]
+modifier.rb:117:81: C: Line is too long. [90/80]
       hash[key] = hash[key].select { |v| !(v.nil? || v == 0 || v == '0' || v == '') }.last
                                                                                 ^^^^^^^^^^
-modifier.rb:119:81: C: Line is too long. [84/80]
+modifier.rb:126:81: C: Line is too long. [84/80]
       hash[key] = (@cancellation_factor * hash[key][0].from_german_to_f).to_german_s
                                                                                 ^^^^
-modifier.rb:121:81: C: Line is too long. [224/80]
-    ['Commission Value', 'ACCOUNT - Commission Value', 'CAMPAIGN - Commission Value', 'BRAND - Commission Value', 'BRAND+CATEGORY - Commission Value', 'ADGROUP - Commission Value', 'KEYWORD - Commission Value'].each do |key|
-                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-modifier.rb:122:81: C: Line is too long. [105/80]
+modifier.rb:132:81: C: Line is too long. [105/80]
       hash[key] = (@cancellation_factor * @saleamount_factor * hash[key][0].from_german_to_f).to_german_s
                                                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^
-modifier.rb:127:3: C: Method has too many lines. [15/10]
+modifier.rb:137:3: C: Method has too many lines. [15/10]
   def combine_hashes(list_of_rows)
   ^^^
-modifier.rb:160:28: C: Redundant curly braces around a hash parameter.
-    CSV.open(output, 'wb', { col_sep: '\t', headers: :first_row, row_sep: '\r\n' }) do |csv|
-                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-modifier.rb:160:81: C: Line is too long. [92/80]
-    CSV.open(output, 'wb', { col_sep: '\t', headers: :first_row, row_sep: '\r\n' }) do |csv|
-                                                                                ^^^^^^^^^^^^
-modifier.rb:177:5: C: Redundant [33mreturn[0m detected.
+modifier.rb:170:28: C: Redundant curly braces around a hash parameter.
+    CSV.open(output, 'wb', { col_sep: '\t', headers:
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^
+modifier.rb:188:5: C: Redundant [33mreturn[0m detected.
     return output
     ^^^^^^
 
-1 file inspected, 27 offenses detected
+1 file inspected, 22 offenses detected

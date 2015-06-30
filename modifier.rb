@@ -32,9 +32,15 @@ end
 
 class Modifier
   KEYWORD_UNIQUE_ID = 'Keyword Unique ID'
-  LAST_VALUE_WINS = ['Account ID', 'Account Name', 'Campaign', 'Ad Group', 'Keyword', 'Keyword Type', 'Subid', 'Paused', 'Max CPC', 'Keyword Unique ID', 'ACCOUNT', 'CAMPAIGN', 'BRAND', 'BRAND+CATEGORY', 'ADGROUP', 'KEYWORD']
+  LAST_VALUE_WINS = ['Account ID', 'Account Name', 'Campaign', 'Ad Group',
+                     'Keyword', 'Keyword Type', 'Subid', 'Paused', 'Max CPC',
+                     'Keyword Unique ID', 'ACCOUNT', 'CAMPAIGN', 'BRAND',
+                     'BRAND+CATEGORY', 'ADGROUP', 'KEYWORD']
   LAST_REAL_VALUE_WINS = ['Last Avg CPC', 'Last Avg Pos']
-  INT_VALUES = ['Clicks', 'Impressions', 'ACCOUNT - Clicks', 'CAMPAIGN - Clicks', 'BRAND - Clicks', 'BRAND+CATEGORY - Clicks', 'ADGROUP - Clicks', 'KEYWORD - Clicks']
+  INT_VALUES = ['Clicks', 'Impressions', 'ACCOUNT - Clicks',
+                'CAMPAIGN - Clicks', 'BRAND - Clicks',
+                'BRAND+CATEGORY - Clicks', 'ADGROUP - Clicks',
+                'KEYWORD - Clicks']
   FLOAT_VALUES = ['Avg CPC', 'CTR', 'Est EPC', 'newBid', 'Costs', 'Avg Pos']
 
   LINES_PER_FILE = 120000
@@ -69,7 +75,8 @@ class Modifier
     file_index = 0
     file_name = output.gsub('.txt', '')
     until done do
-      CSV.open(file_name + "_#{file_index}.txt", 'wb', { col_sep: '\t', headers: :first_row, row_sep: '\r\n' }) do |csv|
+      CSV.open(file_name + "_#{file_index}.txt", 'wb',
+               { col_sep: '\t', headers: :first_row, row_sep: '\r\n' }) do |csv|
         headers_written = false
         line_count = 0
         while line_count < LINES_PER_FILE
@@ -118,7 +125,10 @@ class Modifier
     ['number of commissions'].each do |key|
       hash[key] = (@cancellation_factor * hash[key][0].from_german_to_f).to_german_s
     end
-    ['Commission Value', 'ACCOUNT - Commission Value', 'CAMPAIGN - Commission Value', 'BRAND - Commission Value', 'BRAND+CATEGORY - Commission Value', 'ADGROUP - Commission Value', 'KEYWORD - Commission Value'].each do |key|
+    ['Commission Value', 'ACCOUNT - Commission Value',
+     'CAMPAIGN - Commission Value', 'BRAND - Commission Value',
+     'BRAND+CATEGORY - Commission Value', 'ADGROUP - Commission Value',
+     'KEYWORD - Commission Value'].each do |key|
       hash[key] = (@cancellation_factor * @saleamount_factor * hash[key][0].from_german_to_f).to_german_s
     end
     hash
@@ -157,7 +167,8 @@ class Modifier
   end
 
   def write(content, headers, output)
-    CSV.open(output, 'wb', { col_sep: '\t', headers: :first_row, row_sep: '\r\n' }) do |csv|
+    CSV.open(output, 'wb', { col_sep: '\t', headers:
+                             :first_row, row_sep: '\r\n' }) do |csv|
       csv << headers
       content.each do |row|
         csv << row
