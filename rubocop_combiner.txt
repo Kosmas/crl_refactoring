@@ -1,0 +1,248 @@
+Inspecting 1 file
+C
+
+Offenses:
+
+lib/combiner.rb:4:81: C: Line is too long. [96/80]
+# - block combining two elements having the same key or a single element, if there is no partner
+                                                                                ^^^^^^^^^^^^^^^^
+lib/combiner.rb:8:1: C: Extra empty line detected at class body beginning.
+lib/combiner.rb:9:1: C: Use 2 (not 1) spaces for indentation.
+	def initialize(&key_extractor)
+^
+lib/combiner.rb:9:1: C: Tab detected.
+	def initialize(&key_extractor)
+^
+lib/combiner.rb:10:1: C: Tab detected.
+		@key_extractor = key_extractor
+^^
+lib/combiner.rb:10:2: C: Use 2 (not 1) spaces for indentation.
+		@key_extractor = key_extractor
+ ^
+lib/combiner.rb:11:1: C: Tab detected.
+	end
+^
+lib/combiner.rb:13:1: C: Tab detected.
+	def key(value)
+^
+lib/combiner.rb:14:1: C: Tab detected.
+		value.nil? ? nil : @key_extractor.call(value)
+^^
+lib/combiner.rb:14:2: C: Use 2 (not 1) spaces for indentation.
+		value.nil? ? nil : @key_extractor.call(value)
+ ^
+lib/combiner.rb:15:1: C: Tab detected.
+	end
+^
+lib/combiner.rb:17:1: C: Tab detected.
+	def combine(*enumerators)
+^
+lib/combiner.rb:17:2: C: Assignment Branch Condition size for combine is too high. [37.03/15]
+	def combine(*enumerators)
+ ^^^
+lib/combiner.rb:17:2: C: Cyclomatic complexity for combine is too high. [12/6]
+	def combine(*enumerators)
+ ^^^
+lib/combiner.rb:17:2: C: Method has too many lines. [37/10]
+	def combine(*enumerators)
+ ^^^
+lib/combiner.rb:17:2: C: Perceived complexity for combine is too high. [13/7]
+	def combine(*enumerators)
+ ^^^
+lib/combiner.rb:18:1: C: Tab detected.
+		Enumerator.new do |yielder|
+^^
+lib/combiner.rb:18:2: C: Use 2 (not 1) spaces for indentation.
+		Enumerator.new do |yielder|
+ ^
+lib/combiner.rb:19:1: C: Tab detected.
+			last_values = Array.new(enumerators.size)
+^^^
+lib/combiner.rb:19:3: C: Use 2 (not 1) spaces for indentation.
+			last_values = Array.new(enumerators.size)
+  ^
+lib/combiner.rb:20:1: C: Tab detected.
+			done = enumerators.all? { |enumerator| enumerator.nil? }
+^^^
+lib/combiner.rb:20:11: C: Pass [33m&:nil?[0m as an argument to [33mall?[0m instead of a block.
+			done = enumerators.all? { |enumerator| enumerator.nil? }
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+lib/combiner.rb:21:1: C: Tab detected.
+			while not done
+^^^
+lib/combiner.rb:21:4: C: Favor [33muntil[0m over [33mwhile[0m for negative conditions.
+			while not done
+   ^^^^^^^^^^^^^^
+lib/combiner.rb:21:4: C: Use [33mnext[0m to skip iteration.
+			while not done
+   ^^^^^
+lib/combiner.rb:21:10: C: Use [33m![0m instead of [33mnot[0m.
+			while not done
+         ^^^
+lib/combiner.rb:22:1: C: Tab detected.
+				last_values.each_with_index do |value, index|
+^^^^
+lib/combiner.rb:22:4: C: Use 2 (not 1) spaces for indentation.
+				last_values.each_with_index do |value, index|
+   ^
+lib/combiner.rb:22:17: C: Use [33mnext[0m to skip iteration.
+				last_values.each_with_index do |value, index|
+                ^^^^^^^^^^^^^^^
+lib/combiner.rb:23:1: C: Tab detected.
+					if value.nil? and not enumerators[index].nil?
+^^^^^
+lib/combiner.rb:23:5: C: Use 2 (not 1) spaces for indentation.
+					if value.nil? and not enumerators[index].nil?
+    ^
+lib/combiner.rb:23:20: C: Use [33m&&[0m instead of [33mand[0m.
+					if value.nil? and not enumerators[index].nil?
+                   ^^^
+lib/combiner.rb:23:24: C: Use [33m![0m instead of [33mnot[0m.
+					if value.nil? and not enumerators[index].nil?
+                       ^^^
+lib/combiner.rb:24:1: C: Tab detected.
+						begin
+^^^^^^
+lib/combiner.rb:24:6: C: Use 2 (not 1) spaces for indentation.
+						begin
+     ^
+lib/combiner.rb:25:1: C: Tab detected.
+							last_values[index] = enumerators[index].next
+^^^^^^^
+lib/combiner.rb:25:7: C: Use 2 (not 1) spaces for indentation.
+							last_values[index] = enumerators[index].next
+      ^
+lib/combiner.rb:26:1: C: Tab detected.
+						rescue StopIteration
+^^^^^^
+lib/combiner.rb:27:1: C: Tab detected.
+							enumerators[index] = nil
+^^^^^^^
+lib/combiner.rb:27:7: C: Use 2 (not 1) spaces for indentation.
+							enumerators[index] = nil
+      ^
+lib/combiner.rb:28:1: C: Tab detected.
+						end
+^^^^^^
+lib/combiner.rb:29:1: C: Tab detected.
+					end
+^^^^^
+lib/combiner.rb:30:1: C: Tab detected.
+				end
+^^^^
+lib/combiner.rb:32:1: C: Tab detected.
+				done = enumerators.all? { |enumerator| enumerator.nil? } and last_values.compact.empty?
+^^^^
+lib/combiner.rb:32:12: C: Pass [33m&:nil?[0m as an argument to [33mall?[0m instead of a block.
+				done = enumerators.all? { |enumerator| enumerator.nil? } and last_values.compact.empty?
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+lib/combiner.rb:32:62: C: Use [33m&&[0m instead of [33mand[0m.
+				done = enumerators.all? { |enumerator| enumerator.nil? } and last_values.compact.empty?
+                                                             ^^^
+lib/combiner.rb:32:81: C: Line is too long. [91/80]
+				done = enumerators.all? { |enumerator| enumerator.nil? } and last_values.compact.empty?
+                                                                                ^^^^^^^^^^^
+lib/combiner.rb:33:1: C: Tab detected.
+				unless done
+^^^^
+lib/combiner.rb:34:1: C: Tab detected.
+					min_key = last_values.map { |e| key(e) }.min do |a, b|
+^^^^^
+lib/combiner.rb:34:5: C: Use 2 (not 1) spaces for indentation.
+					min_key = last_values.map { |e| key(e) }.min do |a, b|
+    ^
+lib/combiner.rb:35:1: C: Tab detected.
+						if a.nil? and b.nil?
+^^^^^^
+lib/combiner.rb:35:6: C: Use 2 (not 1) spaces for indentation.
+						if a.nil? and b.nil?
+     ^
+lib/combiner.rb:35:17: C: Use [33m&&[0m instead of [33mand[0m.
+						if a.nil? and b.nil?
+                ^^^
+lib/combiner.rb:36:1: C: Tab detected.
+							0
+^^^^^^^
+lib/combiner.rb:36:7: C: Use 2 (not 1) spaces for indentation.
+							0
+      ^
+lib/combiner.rb:37:1: C: Tab detected.
+						elsif a.nil?
+^^^^^^
+lib/combiner.rb:38:1: C: Tab detected.
+							1
+^^^^^^^
+lib/combiner.rb:38:7: C: Use 2 (not 1) spaces for indentation.
+							1
+      ^
+lib/combiner.rb:39:1: C: Tab detected.
+						elsif b.nil?
+^^^^^^
+lib/combiner.rb:40:1: C: Tab detected.
+							-1
+^^^^^^^
+lib/combiner.rb:40:7: C: Use 2 (not 1) spaces for indentation.
+							-1
+      ^
+lib/combiner.rb:41:1: C: Tab detected.
+						else
+^^^^^^
+lib/combiner.rb:42:1: C: Tab detected.
+							a <=> b
+^^^^^^^
+lib/combiner.rb:42:7: C: Use 2 (not 1) spaces for indentation.
+							a <=> b
+      ^
+lib/combiner.rb:43:1: C: Tab detected.
+						end
+^^^^^^
+lib/combiner.rb:44:1: C: Tab detected.
+					end
+^^^^^
+lib/combiner.rb:45:1: C: Tab detected.
+					values = Array.new(last_values.size)
+^^^^^
+lib/combiner.rb:46:1: C: Tab detected.
+					last_values.each_with_index do |value, index|
+^^^^^
+lib/combiner.rb:47:1: C: Tab detected.
+						if key(value) == min_key
+^^^^^^
+lib/combiner.rb:47:6: C: Use 2 (not 1) spaces for indentation.
+						if key(value) == min_key
+     ^
+lib/combiner.rb:48:1: C: Tab detected.
+							values[index] = value
+^^^^^^^
+lib/combiner.rb:48:7: C: Use 2 (not 1) spaces for indentation.
+							values[index] = value
+      ^
+lib/combiner.rb:49:1: C: Tab detected.
+							last_values[index] = nil
+^^^^^^^
+lib/combiner.rb:50:1: C: Tab detected.
+						end
+^^^^^^
+lib/combiner.rb:51:1: C: Tab detected.
+					end
+^^^^^
+lib/combiner.rb:52:1: C: Tab detected.
+					yielder.yield(values)
+^^^^^
+lib/combiner.rb:53:1: C: Tab detected.
+				end
+^^^^
+lib/combiner.rb:54:1: C: Tab detected.
+			end
+^^^
+lib/combiner.rb:55:1: C: Tab detected.
+		end
+^^
+lib/combiner.rb:56:1: C: Tab detected.
+	end
+^
+lib/combiner.rb:57:4: C: Final newline missing.
+end
+   
+
+1 file inspected, 81 offenses detected
