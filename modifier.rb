@@ -108,7 +108,7 @@ class Modifier
       hash[key] = hash[key].last
     end
     LAST_REAL_VALUE_WINS.each do |key|
-      hash[key] = hash[key].select {|v| not (v.nil? or v == 0 or v == '0' or v == '')}.last
+      hash[key] = hash[key].select {|v| !(v.nil? || v == 0 || v == '0' || v == '')}.last
     end
     INT_VALUES.each do |key|
       hash[key] = hash[key][0].to_s

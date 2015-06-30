@@ -92,29 +92,17 @@ modifier.rb:106:3: C: Method has too many lines. [19/10]
   def combine_values(hash)
   ^^^
 modifier.rb:111:29: C: Use [33mreverse.find[0m instead of [33mselect.last[0m.
-      hash[key] = hash[key].select {|v| not (v.nil? or v == 0 or v == '0' or v == '')}.last
-                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      hash[key] = hash[key].select {|v| !(v.nil? || v == 0 || v == '0' || v == '')}.last
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 modifier.rb:111:36: C: Space between { and | missing.
-      hash[key] = hash[key].select {|v| not (v.nil? or v == 0 or v == '0' or v == '')}.last
+      hash[key] = hash[key].select {|v| !(v.nil? || v == 0 || v == '0' || v == '')}.last
                                    ^^
-modifier.rb:111:41: C: Use [33m![0m instead of [33mnot[0m.
-      hash[key] = hash[key].select {|v| not (v.nil? or v == 0 or v == '0' or v == '')}.last
-                                        ^^^
-modifier.rb:111:53: C: Use [33m||[0m instead of [33mor[0m.
-      hash[key] = hash[key].select {|v| not (v.nil? or v == 0 or v == '0' or v == '')}.last
-                                                    ^^
-modifier.rb:111:63: C: Use [33m||[0m instead of [33mor[0m.
-      hash[key] = hash[key].select {|v| not (v.nil? or v == 0 or v == '0' or v == '')}.last
-                                                              ^^
-modifier.rb:111:75: C: Use [33m||[0m instead of [33mor[0m.
-      hash[key] = hash[key].select {|v| not (v.nil? or v == 0 or v == '0' or v == '')}.last
-                                                                          ^^
-modifier.rb:111:81: C: Line is too long. [91/80]
-      hash[key] = hash[key].select {|v| not (v.nil? or v == 0 or v == '0' or v == '')}.last
-                                                                                ^^^^^^^^^^^
-modifier.rb:111:86: C: Space missing inside }.
-      hash[key] = hash[key].select {|v| not (v.nil? or v == 0 or v == '0' or v == '')}.last
-                                                                                     ^
+modifier.rb:111:81: C: Line is too long. [88/80]
+      hash[key] = hash[key].select {|v| !(v.nil? || v == 0 || v == '0' || v == '')}.last
+                                                                                ^^^^^^^^
+modifier.rb:111:83: C: Space missing inside }.
+      hash[key] = hash[key].select {|v| !(v.nil? || v == 0 || v == '0' || v == '')}.last
+                                                                                  ^
 modifier.rb:120:81: C: Line is too long. [84/80]
       hash[key] = (@cancellation_factor * hash[key][0].from_german_to_f).to_german_s
                                                                                 ^^^^
@@ -161,4 +149,4 @@ modifier.rb:187:6: C: Prefer single-quoted strings when you don't need string in
 puts "DONE modifying"
      ^^^^^^^^^^^^^^^^
 
-1 file inspected, 53 offenses detected
+1 file inspected, 49 offenses detected
